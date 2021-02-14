@@ -1,7 +1,3 @@
-const OFF = 0
-const WARN = 1
-const ERROR = 2
-
 module.exports = {
   env: {
     browser: true,
@@ -17,6 +13,7 @@ module.exports = {
     'plugin:jsx-a11y/recommended',
     'prettier',
     'prettier/@typescript-eslint',
+    'prettier/react',
   ],
   parser: '@typescript-eslint/parser',
   parserOptions: {
@@ -27,5 +24,18 @@ module.exports = {
     sourceType: 'module',
   },
   plugins: ['react', '@typescript-eslint'],
-  rules: {},
+  rules: {
+    '@typescript-eslint/explicit-function-return-type': 'off',
+    '@typescript-eslint/explicit-member-accessibility': 'off',
+    '@typescript-eslint/indent': 'off',
+    '@typescript-eslint/member-delimiter-style': 'off',
+    '@typescript-eslint/no-explicit-any': 'off',
+    '@typescript-eslint/no-unused-vars': ['error', {argsIgnorePattern: '^_'}],
+    '@typescript-eslint/no-use-before-define': 'off',
+    '@typescript-eslint/no-var-requires': 'off',
+    'no-console': ['error', {allow: ['warn', 'error']}],
+    'react/display-name': 'off',
+    'react/prop-types': 'off',
+    'react/react-in-jsx-scope': 'off',
+  },
 }
