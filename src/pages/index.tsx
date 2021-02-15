@@ -1,5 +1,7 @@
-import {Text} from '@chakra-ui/react'
+import MainLayout from '../components/MainLayout'
 
-const Index = (): JSX.Element => <Text>urls</Text>
+const Index = (): JSX.Element => {
+  return <MainLayout></MainLayout>
+}
 
 export default Index
