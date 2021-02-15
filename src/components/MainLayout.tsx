@@ -3,7 +3,7 @@ import Footer from './Footer'
 import Header from './Header'
 
 interface MainLayoutProps {
-  children?: JSX.Element
+  children?: React.ReactNode
 }
 
 const MainLayout = ({children}: MainLayoutProps): JSX.Element => {
