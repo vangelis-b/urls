@@ -8,7 +8,9 @@ const MyApp = ({Component, pageProps}: AppProps): JSX.Element => {
     <ChakraProvider resetCSS theme={theme}>
       <Head>
         <title>_urls</title>
-        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <link rel="icon" type="image/png" href="favicon.png" />
+        <link rel="mask-icon" href="favicon.svg" color="yellow" />
+        <link rel="icon" href="favicon.svg" />
       </Head>
       <Component {...pageProps} />
     </ChakraProvider>
