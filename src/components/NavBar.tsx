@@ -5,18 +5,24 @@ import Logo from './Logo'
 const NavBar = (): JSX.Element => {
   return (
     <Flex
-      align="center"
       as="nav"
       borderBottomWidth="1px"
       h={50}
-      justify="space-between"
-      pl={5}
-      pr={5}
+      justify="center"
       shadow="sm"
       w="100%"
     >
-      <Logo />
-      <DarkModeSwitch />
+      <Flex
+        align="center"
+        justify="space-between"
+        maxW={1200}
+        pl={8}
+        pr={8}
+        w="100%"
+      >
+        <Logo />
+        <DarkModeSwitch />
+      </Flex>
     </Flex>
   )
 }
