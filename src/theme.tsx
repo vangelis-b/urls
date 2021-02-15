@@ -1,6 +1,6 @@
-import { extendTheme } from "@chakra-ui/react";
+import {extendTheme} from '@chakra-ui/react'
 
 // TODO: Override default Chakra UI theme.
-const theme = extendTheme({});
+const theme = extendTheme({})
 
-export default theme;
+export default theme
