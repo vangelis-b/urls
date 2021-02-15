@@ -1,10 +1,10 @@
-import {Flex, Text} from '@chakra-ui/react'
+import {Center, Text} from '@chakra-ui/react'
 
 const Footer = (): JSX.Element => {
   return (
-    <Flex align="center" as="footer" h={50} justify="center" w="100%">
+    <Center as="footer" h={50}>
       <Text color="gray.400">Created by Vangelis Bouzoukas</Text>
-    </Flex>
+    </Center>
   )
 }
 
