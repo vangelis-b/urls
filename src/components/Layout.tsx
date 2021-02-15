@@ -2,11 +2,11 @@ import {Flex} from '@chakra-ui/react'
 import Footer from './Footer'
 import Header from './Header'
 
-interface MainLayoutProps {
+interface LayoutProps {
   children?: React.ReactNode
 }
 
-const MainLayout = ({children}: MainLayoutProps): JSX.Element => {
+const Layout = ({children}: LayoutProps): JSX.Element => {
   return (
     <Flex as="section" flexDirection="column" minH="100vh">
       <Header />
@@ -18,4 +18,4 @@ const MainLayout = ({children}: MainLayoutProps): JSX.Element => {
   )
 }
 
-export default MainLayout
+export default Layout

@@ -1,7 +1,7 @@
-import MainLayout from '../components/MainLayout'
+import Layout from '../components/Layout'
 
 const Index = (): JSX.Element => {
-  return <MainLayout></MainLayout>
+  return <Layout></Layout>
 }
 
 export default Index
