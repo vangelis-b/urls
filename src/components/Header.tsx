@@ -3,7 +3,7 @@ import NavBar from './NavBar'
 
 const Header = (): JSX.Element => {
   return (
-    <Flex as="header" bg="gray.200" w="100%">
+    <Flex as="header" w="100%">
       <NavBar />
     </Flex>
   )
