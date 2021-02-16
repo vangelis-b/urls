@@ -9,7 +9,7 @@ const MyApp = ({Component, pageProps}: AppProps): JSX.Element => {
       <Head>
         <title>_urls</title>
         <link rel="icon" type="image/png" href="favicon.png" />
-        <link rel="mask-icon" href="favicon.svg" color="yellow" />
+        <link rel="mask-icon" href="favicon.svg" color="#0987A0" />
         <link rel="icon" href="favicon.svg" />
       </Head>
       <Component {...pageProps} />
