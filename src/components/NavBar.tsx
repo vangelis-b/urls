@@ -16,8 +16,8 @@ const NavBar = (): JSX.Element => {
         align="center"
         justify="space-between"
         maxW={1200}
-        pl={8}
-        pr={8}
+        pl={[4, 8]}
+        pr={[4, 8]}
         w="100%"
       >
         <Logo />

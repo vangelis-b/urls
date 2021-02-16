@@ -1,22 +1,22 @@
-import {Box, Divider, Heading, Text} from '@chakra-ui/react'
+import {Box} from '@chakra-ui/react'
+import UrlsSectionContent from './UrlsSectionContent'
+import UrlsSectionHeader from './UrlsSectionHeader'
 
 interface UrlsSectionProps {
+  externalSourceUrl: string
   title: string
-  description?: string
 }
 
-const UrlsSection = ({title, description}: UrlsSectionProps): JSX.Element => {
+const UrlsSection = ({
+  externalSourceUrl,
+  title,
+}: UrlsSectionProps): JSX.Element => {
   return (
-    <Box p={5} shadow="sm" borderWidth="1px" w="100%">
-      <Heading fontSize="xl">{title}</Heading>
-      <Divider mt={4} />
-      <Text mt={4}>{description}</Text>
+    <Box as="article" borderWidth="1px" shadow="sm" w="100%">
+      <UrlsSectionHeader title={title} externalSourceUrl={externalSourceUrl} />
+      <UrlsSectionContent />
     </Box>
   )
-}
-
-UrlsSection.defaultProps = {
-  description: 'News feed coming soon',
 }
 
 export default UrlsSection
