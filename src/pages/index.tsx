@@ -1,6 +1,6 @@
 import {Alert, AlertIcon, SimpleGrid, Text} from '@chakra-ui/react'
-import Layout from '../components/Layout'
-import UrlsSection from '../components/UrlsSection'
+import Layout from '../components/common/Layout'
+import UrlsSection from '../components/urls/UrlsSection'
 import sources from '../constants/sources'
 
 const Index = (): JSX.Element => {

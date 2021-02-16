@@ -1,7 +1,8 @@
-import {Flex} from '@chakra-ui/react'
+import {Flex, Text} from '@chakra-ui/react'
 import Content from './Content'
 import Footer from './Footer'
 import Header from './Header'
+import NavBar from './NavBar'
 
 interface LayoutProps {
   children?: React.ReactNode
@@ -10,9 +11,13 @@ interface LayoutProps {
 const Layout = ({children}: LayoutProps): JSX.Element => {
   return (
     <Flex as="section" flexDirection="column" minH="100vh">
-      <Header />
+      <Header>
+        <NavBar />
+      </Header>
       <Content>{children}</Content>
-      <Footer />
+      <Footer>
+        <Text color="gray.400">Created by Vangelis Bouzoukas</Text>
+      </Footer>
     </Flex>
   )
 }
