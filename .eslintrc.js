@@ -35,6 +35,7 @@ module.exports = {
     '@typescript-eslint/no-var-requires': 'off',
     'no-console': ['error', {allow: ['warn', 'error']}],
     'react/display-name': 'off',
+    'react/jsx-sort-props': 'error',
     'react/prop-types': 'off',
     'react/react-in-jsx-scope': 'off',
   },
