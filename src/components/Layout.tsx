@@ -1,4 +1,5 @@
 import {Flex} from '@chakra-ui/react'
+import Content from './Content'
 import Footer from './Footer'
 import Header from './Header'
 
@@ -10,9 +11,7 @@ const Layout = ({children}: LayoutProps): JSX.Element => {
   return (
     <Flex as="section" flexDirection="column" minH="100vh">
       <Header />
-      <Flex as="main" flex="1">
-        {children}
-      </Flex>
+      <Content>{children}</Content>
       <Footer />
     </Flex>
   )
