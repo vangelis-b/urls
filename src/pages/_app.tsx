@@ -5,7 +5,7 @@ import theme from '../theme'
 
 const MyApp = ({Component, pageProps}: AppProps): JSX.Element => {
   return (
-    <ChakraProvider resetCSS theme={theme}>
+    <ChakraProvider theme={theme}>
       <Head>
         <title>_urls</title>
         <link rel="icon" type="image/png" href="favicon.png" />
