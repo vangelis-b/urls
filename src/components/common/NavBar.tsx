@@ -1,6 +1,7 @@
 import {Flex} from '@chakra-ui/react'
 import DarkModeSwitch from './DarkModeSwitch'
 import Logo from './Logo'
+import {VIEWPORT_WIDTH} from '../../constants/styles'
 
 const NavBar = (): JSX.Element => {
   return (
@@ -15,7 +16,7 @@ const NavBar = (): JSX.Element => {
       <Flex
         align="center"
         justify="space-between"
-        maxW={1200}
+        maxW={VIEWPORT_WIDTH}
         pl={[4, 8]}
         pr={[4, 8]}
         w="100%"
