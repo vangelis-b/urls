@@ -7,9 +7,9 @@ const Index = (): JSX.Element => {
   return (
     <Layout>
       {/* TODO: Remove alert when there is real data. */}
-      <Alert mb={[4, 8]} colorScheme="cyan">
+      <Alert colorScheme="cyan" mb={[4, 8]}>
         <AlertIcon />
-        <Text fontWeight="bold" mr={1} color="cyan.700">
+        <Text color="cyan.700" fontWeight="bold" mr={1}>
           _urls
         </Text>
         <Text>is still in construction.</Text>
