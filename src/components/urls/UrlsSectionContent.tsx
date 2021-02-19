@@ -16,9 +16,9 @@ interface Props {
 }
 
 const UrlsSectionContent = ({sourceUrl}: Props): JSX.Element => {
-  const {data, isValidating} = useRssFeed(sourceUrl)
+  const {data, error} = useRssFeed(sourceUrl)
 
-  if (isValidating) {
+  if (!data) {
     return (
       <Box m={[4, 8]}>
         <SkeletonText mt={5} noOfLines={10} spacing={5} />
@@ -26,7 +26,7 @@ const UrlsSectionContent = ({sourceUrl}: Props): JSX.Element => {
     )
   }
 
-  if (!data || !data.items || data.items.length === 0) {
+  if (error) {
     return (
       <Box>
         <Alert
