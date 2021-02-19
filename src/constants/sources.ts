@@ -1,32 +1,39 @@
 const sources = [
   {
     title: 'hackersnews',
-    externalSourceUrl: 'https://news.ycombinator.com/',
-  },
-  {
-    title: 'proggit',
-    externalSourceUrl: 'http://www.reddit.com/r/programming',
-  },
-  {
-    title: 'reddit',
-    externalSourceUrl: 'http://www.reddit.com/',
-  },
-  {
-    title: 'toptal',
-    externalSourceUrl:
-      'https://www.toptal.com/blog#employ-just-quality-engineers-today',
-  },
-  {
-    title: 'slashdot',
-    externalSourceUrl: 'http://www.slashdot.org/',
-  },
-  {
-    title: 'techmeme',
-    externalSourceUrl: 'http://www.techmeme.com/',
+    externalUrl: 'https://news.ycombinator.com/',
+    sourceUrl:
+      'https://api.rss2json.com/v1/api.json?rss_url=http://news.ycombinator.com/rss',
   },
   {
     title: 'wired',
-    externalSourceUrl: 'http://www.wired.com/',
+    externalUrl: 'http://www.wired.com/',
+    sourceUrl:
+      'https://api.rss2json.com/v1/api.json?rss_url=https://www.wired.com/feed',
+  },
+  {
+    title: 'proggit',
+    externalUrl: 'https://www.reddit.com/r/programming/',
+    sourceUrl:
+      'https://api.rss2json.com/v1/api.json?rss_url=https://www.reddit.com/r/programming/.rss',
+  },
+  {
+    title: 'reddit',
+    externalUrl: 'https://www.reddit.com/',
+    sourceUrl:
+      'https://api.rss2json.com/v1/api.json?rss_url=https://www.reddit.com/.rss',
+  },
+  {
+    title: 'slashdot',
+    externalUrl: 'http://www.slashdot.org/',
+    sourceUrl:
+      'https://api.rss2json.com/v1/api.json?rss_url=http://rss.slashdot.org/Slashdot/slashdot',
+  },
+  {
+    title: 'techmeme',
+    externalUrl: 'http://www.techmeme.com/',
+    sourceUrl:
+      'https://api.rss2json.com/v1/api.json?rss_url=http://www.techmeme.com/index.xml',
   },
 ]
 

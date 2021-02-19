@@ -3,18 +3,20 @@ import UrlsSectionContent from './UrlsSectionContent'
 import UrlsSectionHeader from './UrlsSectionHeader'
 
 interface UrlsSectionProps {
-  externalSourceUrl: string
+  externalUrl: string
+  sourceUrl: string
   title: string
 }
 
 const UrlsSection = ({
-  externalSourceUrl,
+  externalUrl,
+  sourceUrl,
   title,
 }: UrlsSectionProps): JSX.Element => {
   return (
     <Box as="article" borderWidth="1px" shadow="sm" w="100%">
-      <UrlsSectionHeader externalSourceUrl={externalSourceUrl} title={title} />
-      <UrlsSectionContent />
+      <UrlsSectionHeader externalUrl={externalUrl} title={title} />
+      <UrlsSectionContent sourceUrl={sourceUrl} />
     </Box>
   )
 }

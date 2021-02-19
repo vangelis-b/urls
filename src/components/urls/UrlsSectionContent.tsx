@@ -1,35 +1,66 @@
-import {Alert, Box, Divider, SkeletonText, Text} from '@chakra-ui/react'
+import {
+  Alert,
+  AlertDescription,
+  AlertIcon,
+  AlertTitle,
+  Box,
+  Divider,
+  SkeletonText,
+} from '@chakra-ui/react'
+import RssFeedItem from '../../types/RssFeedItem'
 import UrlLink from './UrlLink'
+import useRssFeed from '../../hooks/useRssFeed'
 
-const UrlsSectionContent = (): JSX.Element => {
-  // TODO: Update with real data.
-  const data: Array<number> = []
-  // const data = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
-  const description = 'How Tim Cook transformed Apple after Steve Jobs'
-  const isLoading = false
+interface Props {
+  sourceUrl: string
+}
 
-  if (isLoading) {
-    return <SkeletonText mt={5} noOfLines={10} spacing={5} />
+const UrlsSectionContent = ({sourceUrl}: Props): JSX.Element => {
+  const {data, isValidating} = useRssFeed(sourceUrl)
+
+  if (isValidating) {
+    return (
+      <Box m={[4, 8]}>
+        <SkeletonText mt={5} noOfLines={10} spacing={5} />
+      </Box>
+    )
+  }
+
+  if (!data || !data.items || data.items.length === 0) {
+    return (
+      <Box>
+        <Alert
+          alignItems="center"
+          flexDirection="column"
+          justifyContent="center"
+          status="error"
+          textAlign="center"
+        >
+          <AlertIcon />
+          <AlertTitle>These urls not available!</AlertTitle>
+          <AlertDescription>
+            Something went wrong. Please try again later.
+          </AlertDescription>
+        </Alert>
+      </Box>
+    )
   }
 
   return (
-    <Box mx={5} my={5}>
-      {data && data.length > 0 ? (
-        data.map((url, index) => {
-          const isLastUrl = data.length === index + 1
+    <Box m={[4, 8]} mt={[2, 4]}>
+      {data.items.map((rssFeedItem: RssFeedItem, index: number) => {
+        const isLastUrl = data.items.length === index + 1
 
-          return (
-            <Box key={url}>
-              <UrlLink description={description} externalUrl="#" />
-              {!isLastUrl && <Divider my={1} />}
-            </Box>
-          )
-        })
-      ) : (
-        <Alert colorScheme="cyan" mb={[4, 8]}>
-          <Text>Coming soon.</Text>
-        </Alert>
-      )}
+        return (
+          <Box key={rssFeedItem.link}>
+            <UrlLink
+              description={rssFeedItem.title}
+              externalUrl={rssFeedItem.link}
+            />
+            {!isLastUrl && <Divider my={1} />}
+          </Box>
+        )
+      })}
     </Box>
   )
 }
