@@ -1,11 +1,11 @@
 import {Link} from '@chakra-ui/react'
 
-interface UrlLinkProps {
+interface Props {
   description: string
   externalUrl: string
 }
 
-const UrlLink = ({description, externalUrl}: UrlLinkProps): JSX.Element => {
+const UrlLink = ({description, externalUrl}: Props): JSX.Element => {
   return (
     <Link
       color="cyan.700"

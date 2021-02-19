@@ -1,14 +1,11 @@
 import {Divider, Heading, LinkBox, LinkOverlay} from '@chakra-ui/react'
 
-interface UrlsSectionHeaderProps {
+interface Props {
   externalUrl: string
   title: string
 }
 
-const UrlsSectionHeader = ({
-  externalUrl,
-  title,
-}: UrlsSectionHeaderProps): JSX.Element => {
+const UrlsSectionHeader = ({externalUrl, title}: Props): JSX.Element => {
   return (
     <LinkBox as="header" mx={5}>
       <Heading my={4} size="sm">

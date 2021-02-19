@@ -4,11 +4,11 @@ import Footer from './Footer'
 import Header from './Header'
 import NavBar from './NavBar'
 
-interface LayoutProps {
+interface Props {
   children?: React.ReactNode
 }
 
-const Layout = ({children}: LayoutProps): JSX.Element => {
+const Layout = ({children}: Props): JSX.Element => {
   return (
     <Flex as="section" flexDirection="column" minH="100vh">
       <Header>
