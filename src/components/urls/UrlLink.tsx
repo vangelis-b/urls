@@ -8,7 +8,7 @@ interface Props {
 const UrlLink = ({description, externalUrl}: Props): JSX.Element => {
   return (
     <Link
-      color="cyan.700"
+      color="cyan.600"
       fontSize="sm"
       fontWeight="medium"
       href={externalUrl}

@@ -4,7 +4,7 @@ import {ChakraProvider} from '@chakra-ui/react'
 import {SWRConfig} from 'swr'
 import theme from '../theme'
 
-const MyApp = ({Component, pageProps}: AppProps): JSX.Element => {
+const App = ({Component, pageProps}: AppProps): JSX.Element => {
   return (
     <ChakraProvider theme={theme}>
       <Head>
@@ -20,4 +20,4 @@ const MyApp = ({Component, pageProps}: AppProps): JSX.Element => {
   )
 }
 
-export default MyApp
+export default App

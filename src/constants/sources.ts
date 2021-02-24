@@ -3,11 +3,11 @@ const sources = [
     title: 'hackersnews',
     externalUrl: 'https://news.ycombinator.com/',
     sourceUrl:
-      'https://api.rss2json.com/v1/api.json?rss_url=http://news.ycombinator.com/rss',
+      'https://api.rss2json.com/v1/api.json?rss_url=https://news.ycombinator.com/rss',
   },
   {
     title: 'wired',
-    externalUrl: 'http://www.wired.com/',
+    externalUrl: 'https://www.wired.com/',
     sourceUrl:
       'https://api.rss2json.com/v1/api.json?rss_url=https://www.wired.com/feed',
   },
@@ -25,15 +25,15 @@ const sources = [
   },
   {
     title: 'slashdot',
-    externalUrl: 'http://www.slashdot.org/',
+    externalUrl: 'https://www.slashdot.org/',
     sourceUrl:
       'https://api.rss2json.com/v1/api.json?rss_url=http://rss.slashdot.org/Slashdot/slashdot',
   },
   {
     title: 'techmeme',
-    externalUrl: 'http://www.techmeme.com/',
+    externalUrl: 'https://www.techmeme.com/',
     sourceUrl:
-      'https://api.rss2json.com/v1/api.json?rss_url=http://www.techmeme.com/index.xml',
+      'https://api.rss2json.com/v1/api.json?rss_url=https://www.techmeme.com/index.xml',
   },
 ]
 
