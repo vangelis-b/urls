@@ -16,17 +16,9 @@ interface Props {
 }
 
 const UrlsSectionContent = ({sourceUrl}: Props): JSX.Element => {
-  const {data, error} = useRssFeed(sourceUrl)
+  const {data, isError, isLoading} = useRssFeed(sourceUrl)
 
-  if (!data) {
-    return (
-      <Box m={[4, 8]}>
-        <SkeletonText mt={5} noOfLines={10} spacing={5} />
-      </Box>
-    )
-  }
-
-  if (error) {
+  if (isError) {
     return (
       <Box>
         <Alert
@@ -42,6 +34,14 @@ const UrlsSectionContent = ({sourceUrl}: Props): JSX.Element => {
             Something went wrong. Please try again later.
           </AlertDescription>
         </Alert>
+      </Box>
+    )
+  }
+
+  if (isLoading) {
+    return (
+      <Box m={[4, 8]}>
+        <SkeletonText mt={5} noOfLines={10} spacing={5} />
       </Box>
     )
   }
