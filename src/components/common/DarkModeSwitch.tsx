@@ -12,23 +12,21 @@ const DarkModeSwitch = (): JSX.Element => {
 
   return (
     <Tooltip aria-label={tooltipLabel} label={tooltipLabel} openDelay={500}>
-      <Box>
-        {isDark ? (
-          <IconButton
-            aria-label={SWITCH_TO_LIGHT_MODE}
-            icon={<SunIcon />}
-            onClick={toggleColorMode}
-            size="sm"
-          />
-        ) : (
-          <IconButton
-            aria-label={SWITCH_TO_DARK_MODE}
-            icon={<MoonIcon />}
-            onClick={toggleColorMode}
-            size="sm"
-          />
-        )}
-      </Box>
+      {isDark ? (
+        <IconButton
+          aria-label={SWITCH_TO_LIGHT_MODE}
+          icon={<SunIcon />}
+          onClick={toggleColorMode}
+          size="sm"
+        />
+      ) : (
+        <IconButton
+          aria-label={SWITCH_TO_DARK_MODE}
+          icon={<MoonIcon />}
+          onClick={toggleColorMode}
+          size="sm"
+        />
+      )}
     </Tooltip>
   )
 }
