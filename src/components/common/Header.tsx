@@ -1,14 +1,16 @@
-import {Flex, FlexProps} from '@chakra-ui/react'
+import {Box, BoxProps, useColorModeValue} from '@chakra-ui/react'
 
-const Header = (props: FlexProps): JSX.Element => {
+const Header = (props: BoxProps): JSX.Element => {
+  const bgColor = useColorModeValue('white', 'gray.800')
+
   return (
-    <Flex
+    <Box
       as="header"
-      bgColor="white"
+      bgColor={bgColor}
       pos="fixed"
       top={0}
       w="100%"
-      zIndex={999}
+      zIndex={1}
       {...props}
     />
   )
