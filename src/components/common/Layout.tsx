@@ -1,4 +1,4 @@
-import {Flex, Text} from '@chakra-ui/react'
+import {Link, Text} from '@chakra-ui/react'
 import Content from './Content'
 import Footer from './Footer'
 import Header from './Header'
@@ -10,15 +10,20 @@ interface Props {
 
 const Layout = ({children}: Props): JSX.Element => {
   return (
-    <Flex as="section" flexDirection="column" minH="100vh">
+    <>
       <Header>
         <NavBar />
       </Header>
       <Content>{children}</Content>
       <Footer>
-        <Text color="gray.400">Created by Vangelis Bouzoukas</Text>
+        <Text color="gray.500">
+          Created by{' '}
+          <Link href="https://github.com/vangelis-b" isExternal>
+            Vangelis Bouzoukas
+          </Link>
+        </Text>
       </Footer>
-    </Flex>
+    </>
   )
 }
 
