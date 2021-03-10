@@ -3,7 +3,14 @@ import {VIEWPORT_WIDTH} from '../../constants/styles'
 
 const Content = (props: ContainerProps): JSX.Element => {
   return (
-    <Container as="main" flex="1" maxW={VIEWPORT_WIDTH} p={[4, 8]} {...props} />
+    <Container
+      as="main"
+      flex="1"
+      maxW={VIEWPORT_WIDTH}
+      mt={50}
+      p={[4, 8]}
+      {...props}
+    />
   )
 }
 
