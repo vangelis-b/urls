@@ -1,8 +1,8 @@
 import RssFeedItem from './RssFeedItem'
 
 interface RssFeedResponse {
-  status: string
   items: Array<RssFeedItem>
+  status: string
 }
 
 export default RssFeedResponse
