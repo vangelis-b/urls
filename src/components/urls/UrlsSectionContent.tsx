@@ -1,12 +1,5 @@
-import {
-  Alert,
-  AlertDescription,
-  AlertIcon,
-  AlertTitle,
-  Box,
-  Divider,
-  SkeletonText,
-} from '@chakra-ui/react'
+import {Box, Divider, SkeletonText} from '@chakra-ui/react'
+import ErrorMessage from '../common/ErrorMessage'
 import RssFeedItem from '../../types/RssFeedItem'
 import UrlLink from './UrlLink'
 import useRssFeed from '../../hooks/useRssFeed'
@@ -21,19 +14,7 @@ const UrlsSectionContent = ({sourceUrl}: Props): JSX.Element => {
   if (isError) {
     return (
       <Box>
-        <Alert
-          alignItems="center"
-          flexDirection="column"
-          justifyContent="center"
-          status="error"
-          textAlign="center"
-        >
-          <AlertIcon />
-          <AlertTitle>These urls not available!</AlertTitle>
-          <AlertDescription>
-            Something went wrong. Please try again later.
-          </AlertDescription>
-        </Alert>
+        <ErrorMessage title="The urls are not avaiable!" />
       </Box>
     )
   }

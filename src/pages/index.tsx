@@ -7,15 +7,8 @@ const Index = (): JSX.Element => {
   return (
     <Layout>
       <SimpleGrid columns={[1, 1, 2, 3]} spacing={[4, 8]}>
-        {sources.map(({externalUrl, sourceUrl, title}) => {
-          return (
-            <UrlsSection
-              externalUrl={externalUrl}
-              key={title}
-              sourceUrl={sourceUrl}
-              title={title}
-            />
-          )
+        {sources.map(({sourceUrl, title}) => {
+          return <UrlsSection key={title} sourceUrl={sourceUrl} title={title} />
         })}
       </SimpleGrid>
     </Layout>
