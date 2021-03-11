@@ -19,7 +19,7 @@ const UrlsSectionContent = ({sourceUrl, title}: Props): JSX.Element => {
   if (isError) {
     return (
       <Box>
-        <ErrorMessage title="The urls are not avaiable!" />
+        <ErrorMessage title="The urls are not available!" />
       </Box>
     )
   }
