@@ -14,14 +14,14 @@ const Index = (): JSX.Element => {
     return (
       <Layout>
         <SimpleGrid columns={1} spacing={[4, 8]}>
-          <ErrorMessage title={`The urls for _${id} are not avaiable!`} />
+          <ErrorMessage title={`The urls for _${id} are not available!`} />
         </SimpleGrid>
       </Layout>
     )
   }
 
   return (
-    <Layout>
+    <Layout pageTitle={`_${source.title} - _urls`}>
       <SimpleGrid columns={1} spacing={[4, 8]}>
         <UrlsSection sourceUrl={source.sourceUrl} title={source.title} />
       </SimpleGrid>
