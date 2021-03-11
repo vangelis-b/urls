@@ -1,4 +1,5 @@
-import {Box, Divider, Flex, Image, SkeletonText} from '@chakra-ui/react'
+import Image from 'next/image'
+import {Box, Divider, Flex, SkeletonText} from '@chakra-ui/react'
 import {Fragment} from 'react'
 import {useRouter} from 'next/router'
 import ErrorMessage from '../common/ErrorMessage'
@@ -38,24 +39,23 @@ const UrlsSectionContent = ({sourceUrl, title}: Props): JSX.Element => {
     <Box m={[4, 8]} mt={[2, 4]}>
       {data.items.map((rssFeedItem: RssFeedItem, index: number) => {
         const isLastUrl = data.items.length === index + 1
-        const showThumbnail = isExpandedView && rssFeedItem.thumbnail
 
         return (
           <Fragment key={rssFeedItem.title}>
             <Flex alignItems="center">
-              {showThumbnail && (
+              {isExpandedView && rssFeedItem.thumbnail && (
                 <Image
-                  boxSize={75}
                   alt="url image"
+                  height={75}
                   objectFit="cover"
                   src={rssFeedItem.thumbnail}
-                  float="left"
-                  mr={15}
+                  width={75}
                 />
               )}
               <UrlLink
                 description={rssFeedItem.title}
                 externalUrl={rssFeedItem.link}
+                ml={15}
               />
             </Flex>
             {!isLastUrl && <Divider my={1} />}
