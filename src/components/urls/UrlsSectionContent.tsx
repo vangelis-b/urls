@@ -1,17 +1,9 @@
-import {
-  Box,
-  Divider,
-  Image,
-  SkeletonText,
-  Stack,
-  Wrap,
-  WrapItem,
-} from '@chakra-ui/react'
+import {Box, Divider, Flex, Image, SkeletonText} from '@chakra-ui/react'
+import {useRouter} from 'next/router'
 import ErrorMessage from '../common/ErrorMessage'
 import RssFeedItem from '../../types/RssFeedItem'
 import UrlLink from './UrlLink'
 import useRssFeed from '../../hooks/useRssFeed'
-import {useRouter} from 'next/dist/client/router'
 
 interface Props {
   sourceUrl: string
@@ -48,49 +40,25 @@ const UrlsSectionContent = ({sourceUrl, title}: Props): JSX.Element => {
         const showThumbnail = isExpandedView && rssFeedItem.thumbnail
 
         return (
-          <Stack spacing={4}>
-            {showThumbnail && (
-              <Image
-                boxSize={75}
-                alt="url image"
-                objectFit="cover"
-                src={rssFeedItem.thumbnail}
-                d="inline-block"
-              />
-            )}
-            <UrlLink
-              description={rssFeedItem.title}
-              externalUrl={rssFeedItem.link}
-            />
-            {!isLastUrl && <Divider my={1} />}
-          </Stack>
-        )
-
-        return (
-          <Wrap
-            key={rssFeedItem.link}
-            spacing={2}
-            align="center"
-            justify="start"
-          >
-            {showThumbnail && (
-              <WrapItem>
+          <>
+            <Flex alignItems="center">
+              {showThumbnail && (
                 <Image
                   boxSize={75}
                   alt="url image"
                   objectFit="cover"
                   src={rssFeedItem.thumbnail}
+                  float="left"
+                  mr={15}
                 />
-              </WrapItem>
-            )}
-            <WrapItem>
+              )}
               <UrlLink
                 description={rssFeedItem.title}
                 externalUrl={rssFeedItem.link}
               />
-            </WrapItem>
+            </Flex>
             {!isLastUrl && <Divider my={1} />}
-          </Wrap>
+          </>
         )
       })}
     </Box>
