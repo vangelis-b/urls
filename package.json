@@ -22,7 +22,7 @@
     "next": "^10.0.8",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
-    "swr": "^0.5.1"
+    "swr": "^0.5.2"
   },
   "devDependencies": {
     "@next/bundle-analyzer": "^10.0.8",
