@@ -9,6 +9,10 @@ module.exports = withBundleAnalyzer({
         source: '/(.*)',
         headers: [
           {
+            key: 'Content-Security-Policy',
+            value: 'default-src https:',
+          },
+          {
             key: 'Strict-Transport-Security',
             value: 'max-age=63072000; includeSubDomains; preload',
           },
@@ -25,8 +29,12 @@ module.exports = withBundleAnalyzer({
             value: 'nosniff',
           },
           {
+            key: 'Referrer-Policy',
+            value: 'no-referrer, strict-origin-when-cross-origin',
+          },
+          {
             key: 'X-XSS-Protection',
-            value: '1',
+            value: '1; mode=block',
           },
         ],
       },
