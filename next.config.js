@@ -9,10 +9,6 @@ module.exports = withBundleAnalyzer({
         source: '/(.*)',
         headers: [
           {
-            key: 'Content-Security-Policy',
-            value: 'default-src https:',
-          },
-          {
             key: 'Strict-Transport-Security',
             value: 'max-age=63072000; includeSubDomains; preload',
           },
