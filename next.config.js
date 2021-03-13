@@ -16,7 +16,9 @@ module.exports = withBundleAnalyzer({
             key: 'Content-Security-Policy',
             value:
               "default-src 'none';" +
+              "base-uri 'none';" +
               "connect-src 'self' vitals.vercel-insights.com api.rss2json.com;" +
+              "form-action 'none';" +
               "img-src 'self' data:;" +
               "script-src 'self' 'unsafe-inline' 'unsafe-eval';" +
               "style-src 'self' 'unsafe-inline';" +
