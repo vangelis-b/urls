@@ -13,6 +13,18 @@ module.exports = withBundleAnalyzer({
             value: 'max-age=63072000; includeSubDomains; preload',
           },
           {
+            key: 'Content-Security-Policy',
+            value:
+              "default-src 'self';" +
+              "base-uri 'none';" +
+              "connect-src 'self' vitals.vercel-insights.com api.rss2json.com;" +
+              "img-src 'self' data:;" +
+              "object-src 'none';" +
+              "script-src 'self' 'unsafe-inline' 'unsafe-eval';" +
+              "style-src 'self' 'unsafe-inline';" +
+              "frame-ancestors 'none';",
+          },
+          {
             key: 'X-Frame-Options',
             value: 'DENY',
           },
