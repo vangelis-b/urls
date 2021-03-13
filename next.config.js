@@ -14,11 +14,7 @@ module.exports = withBundleAnalyzer({
           },
           {
             key: 'X-Frame-Options',
-            value: 'deny',
-          },
-          {
-            key: 'X-Download-Options',
-            value: 'noopen',
+            value: 'DENY',
           },
           {
             key: 'X-Content-Type-Options',
@@ -26,7 +22,7 @@ module.exports = withBundleAnalyzer({
           },
           {
             key: 'Referrer-Policy',
-            value: 'no-referrer, strict-origin-when-cross-origin',
+            value: 'strict-origin',
           },
           {
             key: 'X-XSS-Protection',
