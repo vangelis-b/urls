@@ -44,6 +44,18 @@ module.exports = withBundleAnalyzer({
       },
     ]
   },
+  async rewrites() {
+    return [
+      {
+        source: '/sb.js',
+        destination: 'https://cdn.splitbee.io/sb.js',
+      },
+      {
+        source: '/sb-api/:slug',
+        destination: 'https://hive.splitbee.io/:slug',
+      },
+    ]
+  },
   images: {
     domains: [
       'a.fsdn.com',
