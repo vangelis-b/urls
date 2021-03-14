@@ -10,7 +10,12 @@ const UrlsSectionHeader = ({title}: Props): JSX.Element => {
     <LinkBox as="header" mx={5}>
       <Heading my={4} size="sm">
         <NextLink as={`/${title}`} href="/[id]">
-          <Link>_{title}</Link>
+          <Link
+            data-splitbee-event="View Section"
+            data-splitbee-section={title}
+          >
+            _{title}
+          </Link>
         </NextLink>
       </Heading>
       <Divider />
