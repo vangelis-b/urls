@@ -1,4 +1,5 @@
 import NextLink from 'next/link'
+import splitbee from '@splitbee/web'
 import {Divider, Heading, Link, LinkBox} from '@chakra-ui/react'
 
 interface Props {
@@ -9,10 +10,9 @@ const UrlsSectionHeader = ({title}: Props): JSX.Element => {
   return (
     <LinkBox as="header" mx={5}>
       <Heading my={4} size="sm">
-        <NextLink as={`/${title}`} href="/[id]">
+        <NextLink href={`/${title}`}>
           <Link
-            data-splitbee-event="View Section"
-            data-splitbee-section={title}
+            onClick={() => splitbee.track('View Section', {section: title})}
           >
             _{title}
           </Link>
