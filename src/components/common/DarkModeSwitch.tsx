@@ -15,6 +15,8 @@ const DarkModeSwitch = (): JSX.Element => {
       {isDark ? (
         <IconButton
           aria-label={SWITCH_TO_LIGHT_MODE}
+          data-splitbee-event-mode="Light"
+          data-splitbee-event="Toggle Dark Mode"
           icon={<SunIcon />}
           onClick={toggleColorMode}
           size="sm"
@@ -22,6 +24,8 @@ const DarkModeSwitch = (): JSX.Element => {
       ) : (
         <IconButton
           aria-label={SWITCH_TO_DARK_MODE}
+          data-splitbee-event-mode="Dark"
+          data-splitbee-event="Toggle Dark Mode"
           icon={<MoonIcon />}
           onClick={toggleColorMode}
           size="sm"
