@@ -23,7 +23,13 @@ const Layout = ({children, pageTitle}: Props): JSX.Element => {
       <Footer>
         <Text color="gray.500">
           Created by{' '}
-          <Link href="https://github.com/vangelis-b" isExternal>
+          <Link
+            data-splitbee-event="External Link"
+            data-splitbee-href="https://github.com/vangelis-b"
+            data-splitbee-title="vangelis-b (Vangelis) · GitHub"
+            href="https://github.com/vangelis-b"
+            isExternal
+          >
             Vangelis Bouzoukas
           </Link>
         </Text>
