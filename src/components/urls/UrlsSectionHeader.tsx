@@ -1,5 +1,6 @@
 import NextLink from 'next/link'
-import {Divider, Heading, Link, LinkBox} from '@chakra-ui/react'
+import splitbee from '@splitbee/web'
+import {Heading, LinkBox, LinkOverlay} from '@chakra-ui/react'
 
 interface Props {
   title: string
@@ -7,18 +8,19 @@ interface Props {
 
 const UrlsSectionHeader = ({title}: Props): JSX.Element => {
   return (
-    <LinkBox as="header" mx={5}>
-      <Heading my={4} size="sm">
-        <NextLink href={`/${title}`} passHref>
-          <Link
-            data-splitbee-event-section={title}
-            data-splitbee-event="View Section"
+    <LinkBox as="header" mx={[4, 8]} my={4}>
+      <Heading size="sm">
+        <NextLink as={`/${title}`} href="/[id]" passHref>
+          {/* Using the splitbee data- attributes causes the navigation to be jarring. */}
+          <LinkOverlay
+            // data-splitbee-event-section={title}
+            // data-splitbee-event="View Section"
+            onClick={() => splitbee.track('View Section', {section: title})}
           >
             _{title}
-          </Link>
+          </LinkOverlay>
         </NextLink>
       </Heading>
-      <Divider />
     </LinkBox>
   )
 }

@@ -36,7 +36,7 @@ const UrlsSectionContent = ({sourceUrl, title}: Props): JSX.Element => {
   const isExpandedView = title === id
 
   return (
-    <Box m={[4, 8]} mt={[2, 4]}>
+    <Box mx={[4, 8]} my={[2, 4]}>
       {data.items.map((rssFeedItem: RssFeedItem, index: number) => {
         const isLastUrl = data.items.length === index + 1
 
@@ -44,21 +44,21 @@ const UrlsSectionContent = ({sourceUrl, title}: Props): JSX.Element => {
           <Fragment key={rssFeedItem.title}>
             <Flex alignItems="center">
               {isExpandedView && rssFeedItem.thumbnail && (
-                <Image
-                  alt="url image"
-                  height={75}
-                  objectFit="cover"
-                  src={rssFeedItem.thumbnail}
-                  width={75}
-                />
+                <Box h={75} mr={2} pos="relative" w={75}>
+                  <Image
+                    alt="url image"
+                    layout="fill"
+                    objectFit="cover"
+                    src={rssFeedItem.thumbnail}
+                  />
+                </Box>
               )}
               <UrlLink
                 description={rssFeedItem.title}
                 externalUrl={rssFeedItem.link}
-                ml={15}
               />
             </Flex>
-            {!isLastUrl && <Divider my={1} />}
+            {!isLastUrl && <Divider my={1.5} />}
           </Fragment>
         )
       })}

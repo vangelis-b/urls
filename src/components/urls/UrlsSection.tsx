@@ -1,4 +1,4 @@
-import {Box} from '@chakra-ui/react'
+import {Box, Divider} from '@chakra-ui/react'
 import UrlsSectionContent from './UrlsSectionContent'
 import UrlsSectionHeader from './UrlsSectionHeader'
 
@@ -11,6 +11,7 @@ const UrlsSection = ({sourceUrl, title}: Props): JSX.Element => {
   return (
     <Box as="article" borderWidth="1px" shadow="sm" w="100%">
       <UrlsSectionHeader title={title} />
+      <Divider />
       <UrlsSectionContent sourceUrl={sourceUrl} title={title} />
     </Box>
   )
