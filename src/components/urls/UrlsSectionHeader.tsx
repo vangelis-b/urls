@@ -8,7 +8,7 @@ interface Props {
 
 const UrlsSectionHeader = ({title}: Props): JSX.Element => {
   return (
-    <LinkBox as="header" mx={[4, 8]} my={3}>
+    <LinkBox as="header" mx={[4, 8]} my={3.5}>
       <Heading size="sm">
         <NextLink as={`/${title}`} href="/[id]" passHref>
           {/* Using the splitbee data- attributes causes the navigation to be jarring. */}
