@@ -11,7 +11,6 @@ const UrlLink = ({description, externalUrl, ...rest}: Props): JSX.Element => {
       color="cyan.600"
       data-splitbee-event="Open External Link"
       data-splitbee-href={externalUrl}
-      data-splitbee-title={description}
       fontSize="sm"
       fontWeight="medium"
       href={externalUrl}

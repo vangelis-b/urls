@@ -25,7 +25,6 @@ const Layout = ({children, pageTitle}: Props): JSX.Element => {
           Created by{' '}
           <Link
             data-splitbee-event="Open External Link"
-            data-splitbee-href="https://github.com/vangelis-b"
             data-splitbee-title="vangelis-b (Vangelis) · GitHub"
             href="https://github.com/vangelis-b"
             isExternal
