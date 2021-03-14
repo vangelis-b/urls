@@ -11,10 +11,8 @@ const UrlsSectionHeader = ({title}: Props): JSX.Element => {
     <LinkBox as="header" mx={[4, 8]} my={3.5}>
       <Heading size="sm">
         <NextLink as={`/${title}`} href="/[id]" passHref>
-          {/* Using the splitbee data- attributes causes the navigation to be jarring. */}
           <LinkOverlay
-            // data-splitbee-event-section={title}
-            // data-splitbee-event="View Section"
+            aria-label={`View ${title} Section`}
             onClick={() => splitbee.track('View Section', {section: title})}
           >
             _{title}

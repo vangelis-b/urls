@@ -24,6 +24,7 @@ const Layout = ({children, pageTitle}: Props): JSX.Element => {
         <Text color="gray.500">
           Created by{' '}
           <Link
+            aria-label="_urls Creator GitHub Profile"
             data-splitbee-event-href="https://github.com/vangelis-b"
             data-splitbee-event-title="vangelis-b (Vangelis) · GitHub"
             data-splitbee-event="Open External Link"

@@ -6,7 +6,7 @@ const Logo = (): JSX.Element => {
   return (
     <NextLink href="/" passHref>
       <Button
-        aria-label="_urls logo"
+        aria-label="_urls Logo"
         as="a"
         color="cyan.600"
         fontSize="x-large"
