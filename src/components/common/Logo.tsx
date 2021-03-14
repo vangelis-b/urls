@@ -6,6 +6,7 @@ const Logo = (): JSX.Element => {
     <NextLink href="/">
       <Button
         color="cyan.600"
+        data-splitbee-event="Go to Homepage"
         fontSize="x-large"
         fontWeight="bold"
         variant="ghost"
