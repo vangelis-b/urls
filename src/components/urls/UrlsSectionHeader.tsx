@@ -12,7 +12,7 @@ const UrlsSectionHeader = ({title}: Props): JSX.Element => {
       <Heading size="sm">
         <NextLink as={`/${title}`} href="/[id]" passHref>
           <LinkOverlay
-            aria-label={`View ${title} Section`}
+            aria-label={`View _${title} Section`}
             onClick={() => splitbee.track('View Section', {section: title})}
           >
             _{title}
