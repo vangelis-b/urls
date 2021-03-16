@@ -9,6 +9,7 @@
     "clean:build": "rm -rf ./.next",
     "clean:node-modules": "rm -rf ./node_modules",
     "dev": "next",
+    "prepare": "husky install",
     "start": "next start",
     "upgrade:latest": "yarn upgrade-interactive --latest"
   },
@@ -42,10 +43,5 @@
     "lint-staged": "^10.5.4",
     "prettier": "^2.2.1",
     "typescript": "^4.2.3"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
   }
 }
