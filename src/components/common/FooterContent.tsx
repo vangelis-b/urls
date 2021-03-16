@@ -6,7 +6,6 @@ const FooterContent = (): JSX.Element => {
       Created by{' '}
       <Link
         aria-label="_urls Creator GitHub Profile"
-        color="cyan"
         data-splitbee-event-href="https://github.com/vangelis-b"
         data-splitbee-event-title="vangelis-b (Vangelis) · GitHub"
         data-splitbee-event="Open External Link"
