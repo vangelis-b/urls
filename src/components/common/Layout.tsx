@@ -1,7 +1,7 @@
 import Head from 'next/head'
-import {Link, Text} from '@chakra-ui/react'
 import Content from './Content'
 import Footer from './Footer'
+import FooterContent from './FooterContent'
 import Header from './Header'
 import NavBar from './NavBar'
 
@@ -21,19 +21,7 @@ const Layout = ({children, pageTitle}: Props): JSX.Element => {
       </Header>
       <Content>{children}</Content>
       <Footer>
-        <Text color="gray.500">
-          Created by{' '}
-          <Link
-            aria-label="_urls Creator GitHub Profile"
-            data-splitbee-event-href="https://github.com/vangelis-b"
-            data-splitbee-event-title="vangelis-b (Vangelis) · GitHub"
-            data-splitbee-event="Open External Link"
-            href="https://github.com/vangelis-b"
-            isExternal
-          >
-            Vangelis Bouzoukas
-          </Link>
-        </Text>
+        <FooterContent />
       </Footer>
     </>
   )
