@@ -6,14 +6,17 @@ import {SWRConfig} from 'swr'
 import {useEffect} from 'react'
 import fetcher from '../utils/fetcher'
 import theme from '../theme'
+import {isProduction} from '../constants/env'
 
 const App = ({Component, pageProps}: AppProps): JSX.Element => {
   useEffect((): void => {
-    splitbee.init({
-      apiUrl: '/sb-api',
-      scriptUrl: '/sb.js',
-      token: process.env.NEXT_PUBLIC_SPLITBEE_TOKEN,
-    })
+    if (isProduction) {
+      splitbee.init({
+        apiUrl: '/sb-api',
+        scriptUrl: '/sb.js',
+        token: process.env.NEXT_PUBLIC_SPLITBEE_TOKEN,
+      })
+    }
   }, [])
 
   return (
