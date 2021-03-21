@@ -1,14 +1,14 @@
 import {Flex} from '@chakra-ui/react'
+import {HEADER_HEIGHT, VIEWPORT_WIDTH} from '../../styles/sizes'
 import DarkModeSwitch from './DarkModeSwitch'
 import Logo from './Logo'
-import {VIEWPORT_WIDTH} from '../../constants/styles'
 
 const NavBar = (): JSX.Element => {
   return (
     <Flex
       as="nav"
       borderBottomWidth="1px"
-      h={50}
+      h={HEADER_HEIGHT}
       justify="center"
       shadow="sm"
       w="100%"
@@ -17,8 +17,7 @@ const NavBar = (): JSX.Element => {
         align="center"
         justify="space-between"
         maxW={VIEWPORT_WIDTH}
-        pl={[4, 8]}
-        pr={[4, 8]}
+        px={[4, 8]}
         w="100%"
       >
         <Logo />
