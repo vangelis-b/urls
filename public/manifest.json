@@ -52,9 +52,8 @@
       "purpose": "any maskable"
     }
   ],
-  "scope": "/",
-  "start_url": "/?source=pwa",
+  "start_url": "/",
   "display": "standalone",
   "theme_color": "#00A3C4",
-  "background_color": "#ffffff"
+  "background_color": "#FFFFFF"
 }
