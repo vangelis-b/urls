@@ -1,36 +1,24 @@
 import {MoonIcon, SunIcon} from '@chakra-ui/icons'
-import {IconButton, Tooltip, useColorMode} from '@chakra-ui/react'
-
-const SWITCH_TO_DARK_MODE = 'Switch to dark mode'
-const SWITCH_TO_LIGHT_MODE = 'Switch to light mode'
+import {IconButton, Tooltip, useColorMode, useColorModeValue} from '@chakra-ui/react'
+import capitalize from '../../utils/capitalize'
 
 const DarkModeSwitch = (): JSX.Element => {
-  const {colorMode, toggleColorMode} = useColorMode()
+  const {toggleColorMode} = useColorMode()
+  const nextColorModeLabel = useColorModeValue('dark', 'light')
+  const SwitchIcon = useColorModeValue(MoonIcon, SunIcon)
 
-  const isDark = colorMode === 'dark'
-  const tooltipLabel = isDark ? SWITCH_TO_LIGHT_MODE : SWITCH_TO_DARK_MODE
+  const label = `Switch to ${nextColorModeLabel} mode`
 
   return (
-    <Tooltip aria-label={tooltipLabel} label={tooltipLabel} openDelay={500}>
-      {isDark ? (
-        <IconButton
-          aria-label={SWITCH_TO_LIGHT_MODE}
-          data-splitbee-event-mode="Light"
-          data-splitbee-event="Toggle Dark Mode"
-          icon={<SunIcon />}
-          onClick={toggleColorMode}
-          size="sm"
-        />
-      ) : (
-        <IconButton
-          aria-label={SWITCH_TO_DARK_MODE}
-          data-splitbee-event-mode="Dark"
-          data-splitbee-event="Toggle Dark Mode"
-          icon={<MoonIcon />}
-          onClick={toggleColorMode}
-          size="sm"
-        />
-      )}
+    <Tooltip label={label} openDelay={500}>
+      <IconButton
+        aria-label={label}
+        data-splitbee-event-mode={capitalize(nextColorModeLabel)}
+        data-splitbee-event="Toggle Dark Mode"
+        icon={<SwitchIcon />}
+        onClick={toggleColorMode}
+        size="sm"
+      />
     </Tooltip>
   )
 }
