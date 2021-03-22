@@ -1,5 +1,5 @@
 import {Container, ContainerProps} from '@chakra-ui/react'
-import {HEADER_HEIGHT, VIEWPORT_WIDTH} from '../../styles/sizes'
+import {HEADER_HEIGHT, VIEWPORT_WIDTH} from '../../theme/sizes'
 
 const Content = (props: ContainerProps): JSX.Element => {
   return (

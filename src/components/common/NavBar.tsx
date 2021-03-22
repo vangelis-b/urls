@@ -1,5 +1,5 @@
 import {Flex} from '@chakra-ui/react'
-import {HEADER_HEIGHT, VIEWPORT_WIDTH} from '../../styles/sizes'
+import {HEADER_HEIGHT, VIEWPORT_WIDTH} from '../../theme/sizes'
 import DarkModeSwitch from './DarkModeSwitch'
 import Logo from './Logo'
 
