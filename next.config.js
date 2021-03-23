@@ -15,15 +15,21 @@ module.exports = withBundleAnalyzer({
           {
             key: 'Content-Security-Policy',
             value:
-              "default-src 'none';" +
-              "base-uri 'self';" +
+              // TODO: Change default-src to 'none' and add all directives set
+              // to 'self' explicitly, once the the following Chromium bug is fixed:
+              // https://bugs.chromium.org/p/chromium/issues/detail?id=801561
+              "default-src 'self';" +
+              "child-src 'none';" +
               "connect-src 'self' vitals.vercel-insights.com api.rss2json.com;" +
+              "font-src 'none';" +
               "form-action 'none';" +
+              "frame-src 'none';" +
               "img-src 'self' data:;" +
-              "manifest-src 'self';" +
-              "prefetch-src 'self';" +
+              "media-src 'none';" +
+              "object-src 'none';" +
               "script-src 'self' 'unsafe-inline' 'unsafe-eval';" +
               "style-src 'self' 'unsafe-inline';" +
+              "worker-src 'none';" +
               "frame-ancestors 'none';",
           },
           {
