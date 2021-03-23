@@ -1,4 +1,5 @@
 import NextDocument, {Html, Head, Main, NextScript} from 'next/document'
+import {ColorModeScript} from '@chakra-ui/color-mode'
 
 export default class Document extends NextDocument {
   render(): JSX.Element {
@@ -84,6 +85,7 @@ export default class Document extends NextDocument {
           <meta name="theme-color" content="#00A3C4" />
         </Head>
         <body>
+          <ColorModeScript initialColorMode="system" />
           <Main />
           <NextScript />
         </body>

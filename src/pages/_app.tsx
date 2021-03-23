@@ -1,9 +1,10 @@
 import splitbee from '@splitbee/web'
 import {AppProps} from 'next/app'
+import {ChakraProvider} from '@chakra-ui/react'
 import {SWRConfig} from 'swr'
 import {useEffect} from 'react'
-import ChakraProvider from '../components/common/ChakraProvider'
 import fetcher from '../utils/fetcher'
+import theme from '../theme'
 import {isProduction} from '../constants/env'
 
 const App = ({Component, pageProps}: AppProps): JSX.Element => {
@@ -19,7 +20,7 @@ const App = ({Component, pageProps}: AppProps): JSX.Element => {
   }, [])
 
   return (
-    <ChakraProvider cookies={pageProps.cookies}>
+    <ChakraProvider theme={theme}>
       <SWRConfig value={{fetcher: fetcher}}>
         <Component {...pageProps} />
       </SWRConfig>
