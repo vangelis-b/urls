@@ -20,6 +20,8 @@ module.exports = withBundleAnalyzer({
               "connect-src 'self' vitals.vercel-insights.com api.rss2json.com;" +
               "form-action 'none';" +
               "img-src 'self' data:;" +
+              "manifest-src 'self';" +
+              "prefetch-src 'self';" +
               "script-src 'self' 'unsafe-inline' 'unsafe-eval';" +
               "style-src 'self' 'unsafe-inline';" +
               "frame-ancestors 'none';",
