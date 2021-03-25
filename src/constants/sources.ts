@@ -1,39 +1,33 @@
 const sources = [
   {
-    title: 'hackersnews',
+    title: 'hackernews',
     externalUrl: 'https://news.ycombinator.com/',
-    sourceUrl:
-      'https://api.rss2json.com/v1/api.json?rss_url=https://news.ycombinator.com/rss',
+    sourceUrl: '/feed-api/hackernews',
   },
   {
     title: 'wired',
     externalUrl: 'https://www.wired.com/',
-    sourceUrl:
-      'https://api.rss2json.com/v1/api.json?rss_url=https://www.wired.com/feed',
+    sourceUrl: '/feed-api/wired',
   },
   {
     title: 'proggit',
     externalUrl: 'https://www.reddit.com/r/programming/',
-    sourceUrl:
-      'https://api.rss2json.com/v1/api.json?rss_url=https://www.reddit.com/r/programming/.rss',
+    sourceUrl: '/feed-api/proggit',
   },
   {
     title: 'reddit',
     externalUrl: 'https://www.reddit.com/',
-    sourceUrl:
-      'https://api.rss2json.com/v1/api.json?rss_url=https://www.reddit.com/.rss',
+    sourceUrl: '/feed-api/reddit',
   },
   {
     title: 'slashdot',
     externalUrl: 'https://www.slashdot.org/',
-    sourceUrl:
-      'https://api.rss2json.com/v1/api.json?rss_url=http://rss.slashdot.org/Slashdot/slashdot',
+    sourceUrl: '/feed-api/slashdot',
   },
   {
-    title: 'techmeme',
-    externalUrl: 'https://www.techmeme.com/',
-    sourceUrl:
-      'https://api.rss2json.com/v1/api.json?rss_url=https://www.techmeme.com/index.xml',
+    title: 'toptal',
+    externalUrl: 'https://www.toptal.com/blog',
+    sourceUrl: '/feed-api/toptal',
   },
 ]
 

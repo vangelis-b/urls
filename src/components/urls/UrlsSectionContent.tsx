@@ -1,7 +1,5 @@
-import Image from 'next/image'
 import {Box, Divider, Flex, SkeletonText} from '@chakra-ui/react'
 import {Fragment} from 'react'
-import {useRouter} from 'next/router'
 import ErrorMessage from '../common/ErrorMessage'
 import RssFeedItem from '../../types/RssFeedItem'
 import UrlLink from './UrlLink'
@@ -9,12 +7,10 @@ import useRssFeed from '../../hooks/useRssFeed'
 
 interface Props {
   sourceUrl: string
-  title: string
 }
 
-const UrlsSectionContent = ({sourceUrl, title}: Props): JSX.Element => {
+const UrlsSectionContent = ({sourceUrl}: Props): JSX.Element => {
   const {data, isError, isLoading} = useRssFeed(sourceUrl)
-  const router = useRouter()
 
   if (isError) {
     return (
@@ -32,9 +28,6 @@ const UrlsSectionContent = ({sourceUrl, title}: Props): JSX.Element => {
     )
   }
 
-  const {id} = router.query
-  const isExpandedView = title === id
-
   return (
     <Box mx={[4, 8]} my={[2, 4]}>
       {data.items.map((rssFeedItem: RssFeedItem, index: number) => {
@@ -43,16 +36,6 @@ const UrlsSectionContent = ({sourceUrl, title}: Props): JSX.Element => {
         return (
           <Fragment key={rssFeedItem.title}>
             <Flex alignItems="center">
-              {isExpandedView && rssFeedItem.thumbnail && (
-                <Box h={75} mr={2} pos="relative" w={75}>
-                  <Image
-                    alt="url image"
-                    layout="fill"
-                    objectFit="cover"
-                    src={rssFeedItem.thumbnail}
-                  />
-                </Box>
-              )}
               <UrlLink
                 description={rssFeedItem.title}
                 externalUrl={rssFeedItem.link}

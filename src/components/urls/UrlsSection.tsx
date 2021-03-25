@@ -12,7 +12,7 @@ const UrlsSection = ({sourceUrl, title}: Props): JSX.Element => {
     <Box as="article" borderWidth="1px" shadow="sm" w="100%">
       <UrlsSectionHeader title={title} />
       <Divider />
-      <UrlsSectionContent sourceUrl={sourceUrl} title={title} />
+      <UrlsSectionContent sourceUrl={sourceUrl} />
     </Box>
   )
 }

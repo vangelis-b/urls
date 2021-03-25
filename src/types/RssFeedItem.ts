@@ -1,7 +1,7 @@
 interface RssFeedItem {
+  description: string
   link: string
   pubDate: Date
-  thumbnail?: string
   title: string
 }
 

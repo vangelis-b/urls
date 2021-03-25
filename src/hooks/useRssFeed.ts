@@ -1,8 +1,9 @@
 import useSWR from 'swr'
-import RssFeedResponse from '../types/RssFeedResponse'
+import RssFeed from '../types/RssFeed'
+import rssFeedFetcher from '../utils/rssFeedFetcher'
 
 const useRssFeed = (url: string): any => {
-  const {data, error} = useSWR<RssFeedResponse>(url)
+  const {data, error} = useSWR<RssFeed>(url, rssFeedFetcher)
 
   return {
     data,

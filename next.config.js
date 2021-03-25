@@ -20,7 +20,7 @@ module.exports = withBundleAnalyzer({
               // https://bugs.chromium.org/p/chromium/issues/detail?id=801561
               "default-src 'self';" +
               "child-src 'none';" +
-              "connect-src 'self' vitals.vercel-insights.com api.rss2json.com;" +
+              "connect-src 'self' vitals.vercel-insights.com;" +
               "font-src 'none';" +
               "form-action 'none';" +
               "frame-src 'none';" +
@@ -54,6 +54,7 @@ module.exports = withBundleAnalyzer({
   },
   async rewrites() {
     return [
+      // Splitbee User Analytics
       {
         source: '/sb.js',
         destination: 'https://cdn.splitbee.io/sb.js',
@@ -62,6 +63,31 @@ module.exports = withBundleAnalyzer({
         source: '/sb-api/:slug',
         destination: 'https://hive.splitbee.io/:slug',
       },
+      // RSS Feed APIs
+      {
+        source: '/feed-api/hackernews',
+        destination: 'https://news.ycombinator.com/rss',
+      },
+      {
+        source: '/feed-api/wired',
+        destination: 'https://www.wired.com/feed',
+      },
+      {
+        source: '/feed-api/proggit',
+        destination: 'https://www.reddit.com/r/programming/.rss',
+      },
+      {
+        source: '/feed-api/reddit',
+        destination: 'https://www.reddit.com/.rss',
+      },
+      {
+        source: '/feed-api/slashdot',
+        destination: 'http://rss.slashdot.org/Slashdot/slashdot',
+      },
+      {
+        source: '/feed-api/toptal',
+        destination: 'https://www.toptal.com/blog.rss',
+      },
     ]
   },
   images: {
@@ -69,8 +95,8 @@ module.exports = withBundleAnalyzer({
       'a.fsdn.com',
       'a.thumbs.redditmedia.com',
       'b.thumbs.redditmedia.com',
+      'bs-uploads.toptal.io',
       'media.wired.com',
-      'www.techmeme.com',
     ],
   },
   poweredByHeader: false,
