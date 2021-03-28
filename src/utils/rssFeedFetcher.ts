@@ -2,7 +2,14 @@ import Parser from 'rss-parser'
 import RssFeed from '../types/RssFeed'
 import RssFeedItem from '../types/RssFeedItem'
 
-const parser: Parser<RssFeed, RssFeedItem> = new Parser()
+const parser: Parser<RssFeed, RssFeedItem> = new Parser({
+  customFields: {
+    item: [
+      ['media:content', 'thumbnail'],
+      ['media:thumbnail', 'thumbnail'],
+    ],
+  },
+})
 
 const rssFeedFetcher = async (
   input: RequestInfo,

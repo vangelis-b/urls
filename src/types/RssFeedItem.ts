@@ -3,6 +3,11 @@ interface RssFeedItem {
   isoDate: Date
   link: string
   title: string
+  thumbnail: {
+    $: {
+      url: string
+    }
+  }
 }
 
 export default RssFeedItem
