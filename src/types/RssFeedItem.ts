@@ -1,7 +1,7 @@
 interface RssFeedItem {
   description: string
+  isoDate: Date
   link: string
-  pubDate: Date
   title: string
 }
 

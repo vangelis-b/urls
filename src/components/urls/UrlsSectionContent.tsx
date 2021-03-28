@@ -5,6 +5,8 @@ import RssFeedItem from '../../types/RssFeedItem'
 import UrlLink from './UrlLink'
 import useRssFeed from '../../hooks/useRssFeed'
 
+const NUMBER_OF_RSS_FEED_ITEMS = 10
+
 interface Props {
   sourceUrl: string
 }
@@ -28,10 +30,12 @@ const UrlsSectionContent = ({sourceUrl}: Props): JSX.Element => {
     )
   }
 
+  const rssFeedItems = data.items.slice(0, NUMBER_OF_RSS_FEED_ITEMS)
+
   return (
     <Box mx={[4, 8]} my={[2, 4]}>
-      {data.items.map((rssFeedItem: RssFeedItem, index: number) => {
-        const isLastUrl = data.items.length === index + 1
+      {rssFeedItems.map((rssFeedItem: RssFeedItem, index: number) => {
+        const isLastUrl = index + 1 === NUMBER_OF_RSS_FEED_ITEMS
 
         return (
           <Fragment key={rssFeedItem.title}>
