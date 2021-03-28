@@ -25,7 +25,7 @@ const UrlsSectionContent = ({sourceUrl}: Props): JSX.Element => {
   if (isLoading) {
     return (
       <Box m={[4, 8]}>
-        <SkeletonText mt={5} noOfLines={10} spacing={5} />
+        <SkeletonText mt={5} noOfLines={10} skeletonHeight={3.5} spacing={10} />
       </Box>
     )
   }
