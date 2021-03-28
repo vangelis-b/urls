@@ -8,7 +8,7 @@ const rssFeedFetcher = async (
   input: RequestInfo,
   init?: RequestInit
 ): Promise<RssFeed> => {
-  const res = await fetch(input, {...init, mode: 'no-cors'})
+  const res = await fetch(input, init)
   const text = await res.text()
 
   return parser.parseString(text)
