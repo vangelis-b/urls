@@ -53,8 +53,4 @@ const UrlsSectionContent = ({sourceUrl}: Props): JSX.Element => {
   )
 }
 
-UrlsSectionContent.defaultProps = {
-  showImages: false,
-}
-
 export default UrlsSectionContent
