@@ -12,7 +12,6 @@ const App = ({Component, pageProps}: AppProps): JSX.Element => {
     if (isProduction) {
       splitbee.init({
         apiUrl: '/sb-api',
-        disableCookie: true,
         scriptUrl: '/sb.js',
         token: process.env.NEXT_PUBLIC_SPLITBEE_TOKEN,
       })
