@@ -8,7 +8,7 @@ import sources from '../constants/sources'
 const Index = (): JSX.Element => {
   const router = useRouter()
   const {id} = router.query
-  const source = sources.find((source) => source.title === id)
+  const source = sources.find((s) => s.title === id)
 
   if (!source) {
     return (
